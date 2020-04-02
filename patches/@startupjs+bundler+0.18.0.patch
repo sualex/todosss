@@ -1,0 +1,15 @@
+diff --git a/node_modules/@startupjs/bundler/webpack.web.config.js b/node_modules/@startupjs/bundler/webpack.web.config.js
+index f7071a1..b4d3904 100644
+--- a/node_modules/@startupjs/bundler/webpack.web.config.js
++++ b/node_modules/@startupjs/bundler/webpack.web.config.js
+@@ -148,7 +148,9 @@ module.exports = function getConfig (env, {
+           exclude: /node_modules/
+         }),
+         Object.assign(getJsxRule(), {
+-          include: new RegExp(`node_modules/(?:${forceCompileModules.join('|')})`)
++          include: new RegExp(`node_modules[\\\\\\/](?:${forceCompileModules.map(
++            p => p.replace(/\//g,`[\\\\\\/]`)).join('|')})`
++          )
+         }),
+         {
+           test: /\.mdx$/,

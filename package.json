@@ -40,6 +40,7 @@
     "@react-native-community/eslint-config": "^0.0.5",
     "babel-eslint": "^10.1.0",
     "babel-jest": "^24.9.0",
+    "cross-env": "^7.0.2",
     "eslint": "^6.5.1",
     "eslint-config-standard": "^14.1.1",
     "eslint-config-standard-react": "^9.2.0",
